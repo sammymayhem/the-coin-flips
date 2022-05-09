@@ -3,4 +3,4 @@ const Prediction = require("./Prediction");
 
 // Define sequelize associations in this file.
 
-module.exports = { User, Stock, Prediction };
+module.exports = { User, Prediction };

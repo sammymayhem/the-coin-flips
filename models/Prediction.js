@@ -1,35 +1,52 @@
-class Prediction extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compare(loginPw, this.password);
-      }
-}
+const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
+const sequelize = require("../config/connection");
 
-Prediction.init({
+class Prediction extends Model {}
+
+Prediction.init(
+  {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
     ticker: {
-        type: DataTypes.STRING,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     start_price: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    start_time: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     predicted_price: {
-        type: DataTypes.DECIMAL,
-        allowNull: false
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+    },
+    predicted_time: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: "user",
-            key: "id",
-            unique: true
-        }
-    }
-})
-module.exports= Prediction;
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+        unique: true,
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "prediction",
+  }
+);
+module.exports = Prediction;
