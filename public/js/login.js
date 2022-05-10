@@ -1,5 +1,6 @@
 // Validate user input and send login request
 const handleLoginSubmit = async (event) => {
+  console.log("yooo");
   event.preventDefault();
   try {
     const username = document.querySelector("#username").value.trim();
@@ -31,5 +32,5 @@ const handleLoginSubmit = async (event) => {
 };
 
 document
-  .querySelector(".login-form")
+  .querySelector("#login-btn")
   .addEventListener("submit", handleLoginSubmit);

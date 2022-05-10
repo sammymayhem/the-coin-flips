@@ -1,14 +1,20 @@
 [
   {
-    "username": "harry",
+    "first_name": "harry",
+    "last_name": "potter",
+    "email": "harry@email.com",
     "password": "password123"
   },
   {
-    "username": "hermione",
+    "first_name": "hermione",
+    "last_name": "granger",
+    "email": "hermione@email.com",
     "password": "password123"
   },
   {
-    "username": "hagrid",
+    "first_name": "rubius",
+    "last_name": "hagred",
+    "email": "rubius@email.com",
     "password": "password123"
   }
 ]
