@@ -1,4 +1,4 @@
-// just going to be placeholders for now (and i'll remove the stonk- just having fun for now)
+// just going to be placeholders for now
 const handlePredictionPost = async (event) => {
     event.preventDefault();
     try {
@@ -7,10 +7,6 @@ const handlePredictionPost = async (event) => {
         const selectedTime = 123456789;
         const predictedPrice = 138; 
         const predictedTime = 23456781;
-        if(!selectedTicker){
-            alert("You must select a stock to proceed");
-            return;
-        }; 
         
         if (!predictedPrice || !predictedTime){
             alert("You must predict both a time AND a price to proceed");
@@ -19,7 +15,7 @@ const handlePredictionPost = async (event) => {
 
         const predictResponse = await fetch ("/api/prediction/", {
             method: "POST",
-            body: JSON.stringify({ selectedTicker, selectedPrice, selectedTime, predictedPrice, predictedTime }),
+            body: [selectedTicker.value, selectedPrice.value, selectedTime.value, predictedPrice.value, predictedTime.value],
             headers: {
                 "Content-Type": "application/json; charset=UTF-8"
             }
@@ -36,4 +32,4 @@ const handlePredictionPost = async (event) => {
 }
 
 // will change query selector to be what the prediction selector will be
-document.getElementById("submitPrediction").addEventListener("click", handlePredictionPost);
+document.getElementById("submitButton").addEventListener("click", handlePredictionPost);
