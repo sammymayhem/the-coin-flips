@@ -1,4 +1,4 @@
-const { Prediction } = ("../../models");
+const { Prediction } = require("../../models");
 const router = require("express").Router();
 
 router.get("/", async (req, res)=> {
@@ -18,4 +18,8 @@ router.post("/", async (req, res)=> {
         res.status(400).json(err);
     }
 })
+
+module.exports=router;
+
+
 
