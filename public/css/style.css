@@ -1,0 +1,48 @@
+:root {
+    --purple: #300350;
+    --dark-pink: #94167F;
+    --medium-pink: #E93479;
+    --pink: #F62E97;
+    --blue: #153CB4;
+    --medium-blue: #00b8ff;
+    --light-blue: #00fff9;
+    --yellow: #F9AC53;
+}
+
+body {
+    padding-bottom: 70px;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 5px;
+}
+
+.nav-item {
+    margin: 5px 15px;
+}
+
+.card {
+    align-items: center;
+}
+
+.card-deck {
+    justify-content: center;
+}
+
+.search {
+    padding: 10px;
+}
+
+.btn {
+    margin: 5px;
+}
+
+.row {
+    justify-content: center;
+}
+
