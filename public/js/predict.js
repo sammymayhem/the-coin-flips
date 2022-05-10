@@ -1,21 +1,23 @@
 // just going to be placeholders for now
 const handlePredictionPost = async (event) => {
+    console.log(event);
     event.preventDefault();
     try {
-        const selectedTicker = "AAPL";
-        const selectedPrice = 840;
-        const selectedTime = 123456789;
-        const predictedPrice = 138; 
-        const predictedTime = 23456781;
-        
-        if (!predictedPrice || !predictedTime){
+        const prediction = {
+        selectedTicker: "AAPL",
+        selectedPrice: 840,
+        selectedTime: 123456789,
+        predictedPrice: 138,
+        predictedTime: 23456781
+        };
+        if (!prediction.predictedPrice || !prediction.predictedTime){
             alert("You must predict both a time AND a price to proceed");
             return;
         };
 
-        const predictResponse = await fetch ("/api/prediction/", {
-            method: "POST",
-            body: [selectedTicker.value, selectedPrice.value, selectedTime.value, predictedPrice.value, predictedTime.value],
+        const predictResponse = await fetch ("/api/prediction", {
+            method: "GET",
+            // body: prediction,
             headers: {
                 "Content-Type": "application/json; charset=UTF-8"
             }
