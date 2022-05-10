@@ -46,3 +46,8 @@ body {
     justify-content: center;
 }
 
+.choice-header {
+    padding: 30px, 15px;
+    text-align: center;
+}
+
