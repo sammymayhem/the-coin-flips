@@ -1,14 +1,18 @@
+const homeHandler = () => {
+  document.location.replace("/");
+};
+
 // Validate user input and send login request
-const handleSignupSubmit = async (event) => {
+const signupHandler = async (event) => {
   event.preventDefault();
   try {
-    const username = document.querySelector("#username").value.trim();
+    const email = document.querySelector("#email").value.trim();
     const password = document.querySelector("#password").value.trim();
     const confirmPassword = document
       .querySelector("#confirm-password")
       .value.trim();
 
-    if (!username || !password) {
+    if (!email || !password) {
       alert("You must provide a username and password.");
       return;
     }
@@ -20,7 +24,7 @@ const handleSignupSubmit = async (event) => {
 
     const response = await fetch("/api/users", {
       method: "POST",
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
       },
@@ -38,6 +42,12 @@ const handleSignupSubmit = async (event) => {
   }
 };
 
-document
-  .querySelector(".signup-form")
-  .addEventListener("submit", handleSignupSubmit);
+const loginHandler = () => {
+  document.location.replace("/login");
+};
+
+document.querySelector("#home-btn").addEventListener("click", homeHandler);
+
+document.querySelector("#signup-btn").addEventListener("submit", signupHandler);
+
+document.querySelector("#login-btn").addEventListener("click", loginHandler);
