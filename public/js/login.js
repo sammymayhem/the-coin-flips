@@ -1,5 +1,5 @@
 const homeHandler = () => {
-  document.location.replace("/");
+  location.replace("/");
 };
 
 // Validate user input and send login request
@@ -28,7 +28,7 @@ const loginHandler = async (event) => {
     }
 
     // go to home page
-    window.location.replace("/");
+    location.replace("/");
   } catch (error) {
     console.log(error);
   }
