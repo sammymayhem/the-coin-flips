@@ -1,10 +1,22 @@
 <section>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Predictions</h1>
-            <p class="lead">The choice is yours.</p>
-        </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Augur</h1>
+      <p class="lead">The choice is yours.</p>
     </div>
+    <div class="top-btn">
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack"
+          viewBox="0 0 16 16">
+          <path
+            d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
+          <path
+            d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
+        </svg>
+      </button>
+    </div>
+  </div>
 </section>
 
 {{#if isLoggedIn}}
@@ -108,72 +120,16 @@
     crossorigin="anonymous"></script>
 <script src="./public/js/predict.js"></script>
 {{else}}
-<section>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login">
-        Login
-    </button>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup">
-        Signup
-    </button>
+<section class="top-menu">
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body" id="nav-login-btn">
+      <a>Login</a>
+    </div>
+    <div class="card card-body" id="nav-signup-btn">
+      <a>Sign Up</a>
+    </div>
+  </div>
 </section>
-
-<div class="modal" tabindex="-1" id="login" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Log In</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" />
-                </div>
-                <button type="submit" class="btn btn-primary" id="login-btn">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal" tabindex="-1" id="signup" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Sign Up</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputFirstName1" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="exampleInputFirstName1"
-                        aria-describedby="firstNameHelp" />
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputLastName1" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="exampleInputLastName1"
-                        aria-describedby="LastNameHelp" />
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" />
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
 {{/if}}
 
 <script src="./js/prediction.js"></script>
