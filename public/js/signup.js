@@ -42,12 +42,12 @@ const signupHandler = async (event) => {
   }
 };
 
-const loginHandler = () => {
-  document.location.replace("/login");
-};
+// const loginHandler = () => {
+//   document.location.replace("/login");
+// };
 
 document.querySelector("#home-btn").addEventListener("click", homeHandler);
 
 document.querySelector("#signup-btn").addEventListener("submit", signupHandler);
 
-document.querySelector("#login-btn").addEventListener("click", loginHandler);
+//document.querySelector("#login-btn").addEventListener("click", loginHandler);

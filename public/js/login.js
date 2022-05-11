@@ -23,7 +23,7 @@ const loginHandler = async (event) => {
     });
 
     if (!response.ok) {
-      alert("Failed to sign up.");
+      alert("Failed to login in.");
       return;
     }
 
@@ -34,12 +34,12 @@ const loginHandler = async (event) => {
   }
 };
 
-const signupHandler = () => {
-  document.location.replace("/signup");
-};
+// const signupHandler = () => {
+//   document.location.replace("/signup");
+// };
 
 document.querySelector("#home-btn").addEventListener("click", homeHandler);
 
-document.querySelector("#login-btn").addEventListener("submit", loginHandler);
+document.querySelector("#login-btn").addEventListener("click", loginHandler);
 
-document.querySelector("#signup-btn").addEventListener("click", signupHandler);
+//document.querySelector("#signup-btn").addEventListener("click", signupHandler);

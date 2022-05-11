@@ -15,9 +15,9 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await User.findOne({ where: { username } });
+    const user = await User.findOne({ where: { email } });
     if (!user) {
       throw new Error("User not found.");
     }
@@ -31,6 +31,14 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(400).json({ message: "Invalid username or password." });
+  }
+});
+
+router.get("/login", (req, res) => {
+  if (req.session.isLoggedIn) {
+    res.json(true);
+  } else {
+    res.json(false);
   }
 });
 
