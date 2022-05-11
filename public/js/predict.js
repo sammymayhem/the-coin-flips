@@ -34,6 +34,21 @@ const handlePredictionPost = async (event) => {
         console.log(err);
     }
 }
+const searchTicker = async () => {
+    try {
+        const tickerText = document.getElementById("ticker-text").value;
+        const response = await fetch("/api/prediction/ticker", {
+            method: "POST",
+            body: JSON.stringify({tickerText}),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        });
+    } catch (err) {
+        console.log(err);
+    }
 
+}
 // will change query selector to be what the prediction selector will be
 document.getElementById("submitButton").addEventListener("click", handlePredictionPost);
+document.getElementById("ticker-search").addEventListener("click", searchTicker);
