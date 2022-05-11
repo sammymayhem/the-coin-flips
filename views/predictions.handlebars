@@ -38,13 +38,15 @@
 
 <!-- Search bar for searching individual ticker symbols -->
 <section class="search">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Ticker Symbol" aria-label="Ticker Symbol"
-            aria-describedby="basic-addon2">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">Search</button>
+    <form>
+        <div class="input-group mb-3">
+            <input type="text" name="tickerText" class="form-control" id="ticker-text" placeholder="Ticker Symbol" aria-label="Ticker Symbol"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="ticker-search">Search</button>
+            </div>
         </div>
-    </div>
+    </form>
 </section>
 
 <!-- Modal for prediction -->
@@ -70,20 +72,6 @@
         </div>
     </div>
 </div>
-
-<!-- Array or buttons for top 20 tickers (or something along those lines) -->
-<section class="ticker-sym">
-    <div class="container">
-        <div class="row">
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#myModal">AAPL</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker2">AMC</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker3">TSLA</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker4">SOFI</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker5">COIN</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker6">NVDA</button>
-        </div>
-    </div>
-</section>
 
 <!-- Bottom Navbar -->
 <footer>
@@ -126,4 +114,4 @@
 </footer>
 
 
-<script src="./js/predict.js"></script>
+{{!-- <script src="./js/predict.js"></script> --}}

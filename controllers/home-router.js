@@ -39,7 +39,8 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/predictions", (req, res) => {
+  console.log(req.query);
   res.render("predictions", {title: "Prediction"})
-})
+});
 
 module.exports = router;

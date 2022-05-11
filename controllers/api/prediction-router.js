@@ -25,6 +25,14 @@ router.post("/", async (req, res)=> {
     }
 });
 
+router.post("/ticker", async (req, res) => {
+    const ticker = req.body.tickerText;
+
+    console.log(ticker);
+    res.json("okay");
+    // api call
+})
+
 module.exports=router;
 
 
