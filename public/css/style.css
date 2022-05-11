@@ -13,6 +13,14 @@ body {
     padding-bottom: 70px;
 }
 
+.jumbotron {
+    text-align: center;
+}
+
+.top-btn {
+    justify-content: left;
+}
+
 .navbar {
     overflow: hidden;
     position: fixed;
@@ -48,6 +56,7 @@ body {
 
 .choice-header {
     padding: 30px, 15px;
+    margin: 10px;
     text-align: center;
 }
 
