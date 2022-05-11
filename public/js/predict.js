@@ -3,12 +3,13 @@ const handlePredictionPost = async (event) => {
     console.log(event);
     event.preventDefault();
     try {
+        //all the document selectors are placeholders atm
         const prediction = {
-        selectedTicker: "AAPL",
-        selectedPrice: 840,
-        selectedTime: 123456789,
-        predictedPrice: 138,
-        predictedTime: 23456781
+        selectedTicker: document.querySelector("button"),
+        selectedPrice: document.querySelector("ticker-price"),
+        selectedTime: document.querySelector("current-time"),
+        predictedPrice: document.querySelector("prediction-price"),
+        predictedTime: document.querySelector("prediction-time")
         };
         if (!prediction.predictedPrice || !prediction.predictedTime){
             alert("You must predict both a time AND a price to proceed");
@@ -16,7 +17,7 @@ const handlePredictionPost = async (event) => {
         };
 
         const predictResponse = await fetch ("/api/prediction", {
-            method: "GET",
+            method: "POST",
             // body: prediction,
             headers: {
                 "Content-Type": "application/json; charset=UTF-8"
