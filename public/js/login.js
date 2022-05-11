@@ -1,6 +1,9 @@
+const homeHandler = () => {
+  document.location.replace("/");
+};
+
 // Validate user input and send login request
-const handleLoginSubmit = async (event) => {
-  console.log("yooo");
+const loginHandler = async (event) => {
   event.preventDefault();
   try {
     const username = document.querySelector("#username").value.trim();
@@ -31,6 +34,12 @@ const handleLoginSubmit = async (event) => {
   }
 };
 
-document
-  .querySelector("#login-btn")
-  .addEventListener("submit", handleLoginSubmit);
+const signupHandler = () => {
+  document.location.replace("/signup");
+};
+
+document.querySelector("#home-btn").addEventListener("click", homeHandler);
+
+document.querySelector("#login-btn").addEventListener("submit", loginHandler);
+
+document.querySelector("#signup-btn").addEventListener("click", signupHandler);
