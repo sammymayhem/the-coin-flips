@@ -3,11 +3,11 @@ const homeHandler = () => {
 };
 
 const loginHandler = () => {
-  window.location.replace("/login");
+  location.replace("/login");
 };
 
 const signupHandler = () => {
-  window.location.replace("/signup");
+  location.replace("/signup");
 };
 
 const logoutHandler = async () => {
@@ -23,9 +23,7 @@ const logoutHandler = async () => {
       alert("Failed to log out.");
       return;
     }
-
-    // go to home page
-    window.location.replace("/");
+    location.replace("/");
   } catch (error) {
     console.log(error);
   }
