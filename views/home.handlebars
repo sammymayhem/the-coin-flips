@@ -19,6 +19,7 @@
   </div>
 </section>
 
+{{!-- If not logged in --}}
 <section class="top-menu">
   <div class="collapse" id="collapseExample">
     <div class="card card-body" id="nav-login-btn">
@@ -30,10 +31,30 @@
   </div>
 </section>
 
+{{!-- If logged in --}}
+<section class="top-menu">
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body" id="nav-home-btn">
+      <a>Home</a>
+    </div>
+    <div class="card card-body" id="nav-predict-btn">
+      <a>Predict</a>
+    </div>
+    <div class="card card-body" id="nav-portfolio-btn">
+      <a>Portfolio</a>
+    </div>
+    <div class="card card-body" id="nav-news-btn">
+      <a>News</a>
+    </div>
+  </div>
+</section>
+
+
+
 {{#if isLoggedIn}}
 With Auth
 {{else}}
 Without Auth
 {{/if}}
 
-<script src="./js/login.js"></script>
+<script src="./js/home.js"></script>
