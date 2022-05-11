@@ -9,34 +9,34 @@ Prediction.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     ticker: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     start_price: {
       type: DataTypes.DECIMAL,
-      allowNull: false,
+      allowNull: false
     },
     start_time: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     predicted_price: {
       type: DataTypes.DECIMAL,
-      allowNull: false,
+      allowNull: false
     },
     predicted_time: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
-        unique: true,
+        unique: true
       },
     },
   },

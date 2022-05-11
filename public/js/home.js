@@ -2,6 +2,10 @@ const homeHandler = () => {
   location.replace("/");
 };
 
+const predictHandler = () => {
+  location.replace("/predictions");
+};
+
 const loginHandler = () => {
   location.replace("/login");
 };
@@ -36,6 +40,9 @@ const attachHandlers = (isLoggedIn) => {
     document
       .querySelector("#nav-logout-btn")
       .addEventListener("click", logoutHandler);
+    document
+      .querySelector("#nav-predict-btn")
+      .addEventListener("click", predictHandler);
   } else {
     document
       .querySelector("#nav-login-btn")
