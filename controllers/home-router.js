@@ -38,4 +38,8 @@ router.get("/signup", (req, res) => {
   res.render("signup", { title: "Sign-Up Page" });
 });
 
+router.get("/predictions", (req, res) => {
+  res.render("predictions", {title: "Prediction"})
+})
+
 module.exports = router;
