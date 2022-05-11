@@ -1,7 +1,7 @@
 <section>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Augur</h1>
+      <h1 class="display-4" id="home-btn">Augur</h1>
       <p class="lead">The choice is yours.</p>
     </div>
     <div class="top-btn">
@@ -19,19 +19,8 @@
   </div>
 </section>
 
-{{!-- If not logged in --}}
-<section class="top-menu">
-  <div class="collapse" id="collapseExample">
-    <div class="card card-body" id="nav-login-btn">
-      <a>Login</a>
-    </div>
-    <div class="card card-body" id="nav-signup-btn">
-      <a>Sign Up</a>
-    </div>
-  </div>
-</section>
 
-{{!-- If logged in --}}
+{{#if isLoggedIn}}
 <section class="top-menu">
   <div class="collapse" id="collapseExample">
     <div class="card card-body" id="nav-home-btn">
@@ -43,18 +32,22 @@
     <div class="card card-body" id="nav-portfolio-btn">
       <a>Portfolio</a>
     </div>
-    <div class="card card-body" id="nav-news-btn">
-      <a>News</a>
+    <div class="card card-body" id="nav-logout-btn">
+      <a>Logout</a>
     </div>
   </div>
 </section>
-
-
-
-{{#if isLoggedIn}}
-With Auth
 {{else}}
-Without Auth
+<section class="top-menu">
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body" id="nav-login-btn">
+      <a>Login</a>
+    </div>
+    <div class="card card-body" id="nav-signup-btn">
+      <a>Sign Up</a>
+    </div>
+  </div>
+</section>
 {{/if}}
 
 <script src="./js/home.js"></script>
