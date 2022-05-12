@@ -38,13 +38,15 @@
 
 <!-- Search bar for searching individual ticker symbols -->
 <section class="search">
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Ticker Symbol" aria-label="Ticker Symbol"
-            aria-describedby="basic-addon2">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">Search</button>
+    <form>
+        <div class="input-group mb-3">
+            <input type="text" name="tickerText" class="form-control" id="ticker-text" placeholder="Ticker Symbol" aria-label="Ticker Symbol"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" id="ticker-search">Search</button>
+            </div>
         </div>
-    </div>
+    </form>
 </section>
 
 <!-- Modal for prediction -->
@@ -89,7 +91,6 @@
     </div>
 </div>
 
-
 <!-- Bottom Navbar -->
 <footer>
     <nav class="navbar navbar-dark bg-dark">
@@ -131,4 +132,4 @@
 </footer>
 
 
-<script src="./js/predict.js"></script>
+{{!-- <script src="./js/predict.js"></script> --}}
