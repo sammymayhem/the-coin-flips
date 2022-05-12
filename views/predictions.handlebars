@@ -5,8 +5,8 @@
             <p class="lead">The choice is yours.</p>
         </div>
         <div class="top-btn">
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-                aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary" id="menu-btn" type="button" data-toggle="collapse"
+                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack"
                     viewBox="0 0 16 16">
                     <path
@@ -19,6 +19,7 @@
     </div>
 </section>
 
+{{!-- Top menu button items --}}
 <section class="top-menu">
     <div class="collapse" id="collapseExample">
         <div class="card card-body" id="nav-home-btn">
@@ -40,39 +41,17 @@
 <section class="search">
     <form>
         <div class="input-group mb-3">
-            <input type="text" name="tickerText" class="form-control" id="ticker-text" placeholder="Ticker Symbol" aria-label="Ticker Symbol"
-                aria-describedby="basic-addon2">
+            <input type="text" name="tickerText" class="form-control" id="ticker-text" placeholder="Ticker Symbol"
+                aria-label="Ticker Symbol" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit" id="ticker-search">Search</button>
+                <button class="btn btn-outline-secondary" type="submit" id="ticker-search"
+                    cursor="pointer">Search</button>
             </div>
         </div>
     </form>
 </section>
 
-<!-- Modal for prediction -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ticker">Ticker Symbol</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Chart goes here</p>
-                <p id="ticker-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto
-                    recusandae exercitationem et magnam voluptas vitae sit debitis sapiente laborum minima.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+{{!-- Card shows after the search has been made --}}
 {{#if active}}
 <div class="container" id="predict-card">
     <div class="row">
@@ -98,7 +77,7 @@
 
 <!-- Bottom Navbar -->
 <footer>
-    <nav class="navbar navbar-dark bg-dark">
+    {{!-- <nav class="navbar navbar-dark bg-dark">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
                 <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -133,10 +112,11 @@
                     </svg></a>
             </li>
         </ul>
-    </nav>
+    </nav> --}}
 </footer>
 
 {{#if active}}
 <script src="./js/chart.js"></script>
 {{/if}}
-{{!-- <script src="./js/predict.js"></script> --}}
+{{!--
+<script src="./js/predict.js"></script> --}}

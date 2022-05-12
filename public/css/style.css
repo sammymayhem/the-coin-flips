@@ -7,18 +7,46 @@
     --medium-blue: #00b8ff;
     --light-blue: #00fff9;
     --yellow: #F9AC53;
+    --dark-grey: #333533;
 }
 
 body {
     padding-bottom: 70px;
+    background-color: var(--dark-grey);
+    text-align: center;
 }
 
 .jumbotron {
     text-align: center;
+    background-color: var(--dark-grey);
+}
+
+h1 {
+    color: var(--medium-pink);
+}
+
+.lead {
+    color: var(--light-blue);
 }
 
 .top-btn {
     justify-content: left;
+}
+
+form {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    color: var(--light-blue);
+}
+
+input {
+    background-color: var(--dark-grey)!important;
+    color: whitesmoke!important;
+    border-color: var(--medium-pink) !important;
 }
 
 .navbar {
@@ -36,6 +64,8 @@ body {
 
 .card {
     align-items: center;
+    border-color: var(--medium-pink) !important;
+    display: flex;
 }
 
 .card-deck {
@@ -50,6 +80,38 @@ body {
     margin: 5px;
 }
 
+#login-btn {
+    padding: 20px 50px;
+    background-color: var(--dark-grey) !important;
+    border-color: var(--light-blue)!important;
+    color: var(--light-blue)!important;
+}
+
+#ticker-search {
+    background-color: var(--dark-grey) !important;
+    border-color: var(--light-blue)!important;
+    color: var(--light-blue)!important;
+}
+
+#menu-btn,
+#predict-btn {
+    background-color: var(--dark-grey) !important;
+    border-color: var(--medium-pink)!important;
+    color: var(--medium-pink)!important;
+}
+
+#nav-home-btn,
+#nav-predict-btn,
+#nav-portfolio-btn,
+#nav-logout-btn,
+#nav-login-btn,
+#nav-signup-btn {
+    background-color: var(--dark-grey) !important;
+    border-color: var(--light-blue)!important;
+    color: var(--light-blue)!important;
+    cursor: pointer;
+}
+
 .row {
     justify-content: center;
 }
@@ -58,4 +120,21 @@ body {
     padding: 30px, 15px;
     margin: 10px;
     text-align: center;
+}
+
+#predict-btn {
+    align-items: center;
+}
+
+.card-body {
+    background-color: var(--dark-grey) !important;
+    border-color: var(--medium-pink) !important;
+}
+
+#start-price {
+    color: var(--medium-pink) !important;
+}
+
+#predict-card {
+    color: var(--light-blue) !important;
 }
