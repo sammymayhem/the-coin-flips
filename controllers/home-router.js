@@ -39,8 +39,12 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/predictions", (req, res) => {
-  console.log(req.query);
-  res.render("predictions", {title: "Prediction"})
+  // if req.query has key of tickerText, call api and respond with data to be charted
+  if ("tickerText" in req.query) {
+    // res.render("predictions", { title: "Prediction" });
+  }
+
+  res.render("predictions", { title: "Prediction" });
 });
 
 module.exports = router;
