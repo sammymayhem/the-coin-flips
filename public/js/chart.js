@@ -1,5 +1,5 @@
 const ctx = document.getElementById("chart").getContext("2d");
-
+const currentPrice = document.getElementById("current-price");
 const ticker = document.getElementById("ticker-symbol").textContent;
 
 const validateClick = (x) => {
@@ -17,12 +17,15 @@ const getChart = async () => {
     });
     const axisdata = await response.json();
 
+    currentPrice.textContent = axisdata.y[axisdata.y.length - 1];
+
     const chart = new Chart(ctx, {
       type: "line",
       data: {
         labels: axisdata.x,
         datasets: [
           {
+            borderColor: "#00fff9",
             data: axisdata.y,
           },
         ],
@@ -36,6 +39,16 @@ const getChart = async () => {
                 day: "MMM D",
               },
             },
+          },
+        },
+        elements: {
+          point: {
+            radius: 0,
+          },
+        },
+        plugins: {
+          legend: {
+            display: false,
           },
         },
         onClick: (e) => {
