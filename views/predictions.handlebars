@@ -71,19 +71,24 @@
     </div>
 </div>
 
-<!-- Array or buttons for top 20 tickers (or something along those lines) -->
-<section class="ticker-sym">
-    <div class="container">
-        <div class="row">
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#myModal">AAPL</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker2">AMC</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker3">TSLA</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker4">SOFI</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker5">COIN</button>
-            <button type="button" class="btn btn-primary col-3" data-toggle="modal" data-target="#ticker6">NVDA</button>
+<div class="container" id="predict-card">
+    <div class="row">
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="ticker-symbol">AAPL</h5>
+                <h6 class="card-subtitle mb-2 text-muted" id="start-price">136.34</h6>
+                <canvas id="chart" width="18rem" height="18rem"></canvas>
+                <p class="card-text" id="ticker-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Voluptates ea earum omnis, iste quod blanditiis suscipit, ducimus consectetur, eveniet sequi odio.
+                    Neque corrupti praesentium aspernatur, asperiores voluptas rerum quasi assumenda, soluta architecto
+                    est cum illo! Esse optio dolore eius asperiores expedita cupiditate assumenda accusamus doloribus
+                    quia, omnis beatae illum voluptatibus!</p>
+                <button type="button" class="btn btn-primary" id="predict-btn">Predict</button>
+            </div>
         </div>
     </div>
-</section>
+</div>
+
 
 <!-- Bottom Navbar -->
 <footer>
