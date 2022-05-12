@@ -25,7 +25,7 @@ h1 {
     color: var(--medium-pink);
 }
 
-.lead {
+.lead{
     color: var(--light-blue);
 }
 
@@ -153,4 +153,9 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px var(--dark-grey) inset;
   background-color: var(--dark-grey);
   caret-color: whitesmoke;
+}
+
+#prediction-header {
+    text-decoration: underline;
+    padding: 10px 0;
 }
