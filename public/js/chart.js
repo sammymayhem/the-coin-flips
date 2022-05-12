@@ -1,6 +1,7 @@
 const ctx = document.getElementById("chart").getContext("2d");
 const currentPrice = document.getElementById("current-price");
 const ticker = document.getElementById("ticker-symbol").textContent;
+const predictionPreview = document.getElementById("prediction-preview");
 
 const validateClick = (x) => {
   return x > moment().format("x");
@@ -56,11 +57,16 @@ const getChart = async () => {
           const clickX = Math.round(
             chart.scales.x.getValueForPixel(canvasPosition.x)
           );
-          const clickY = chart.scales.y.getValueForPixel(canvasPosition.y);
+          const clickY =
+            Math.round(
+              chart.scales.y.getValueForPixel(canvasPosition.y) * 100
+            ) / 100;
 
           const validClick = validateClick(clickX);
+          const predDate = moment(clickX, "x").format("MMM D");
 
           if (validClick) {
+            predictionPreview.innerHTML = `<h6>Prediction:</br> ${ticker}:  $${clickY} @ ${predDate}</h6>`;
             console.log(clickX);
             console.log(clickY);
           }
