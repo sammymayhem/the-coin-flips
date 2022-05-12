@@ -25,7 +25,7 @@ const getChart = async () => {
         labels: axisdata.x,
         datasets: [
           {
-            borderColor: "#00fff9",
+            borderColor: "#E93479",
             data: axisdata.y,
           },
         ],
@@ -36,6 +36,7 @@ const getChart = async () => {
             type: "time",
             time: {
               displayFormats: {
+                borderColor: "#E93479",
                 day: "MMM D",
               },
             },

@@ -8,6 +8,7 @@
     --light-blue: #00fff9;
     --yellow: #F9AC53;
     --dark-grey: #333533;
+    --light-purple: #cb88fa;
 }
 
 body {
@@ -22,11 +23,11 @@ body {
 }
 
 h1 {
-    color: var(--medium-pink);
+    color: var(--medium-blue);
 }
 
 .lead {
-    color: var(--light-blue);
+    color: var(--light-purple);
 }
 
 .top-btn {
@@ -40,13 +41,13 @@ form {
 }
 
 label {
-    color: var(--light-blue);
+    color: var(--light-purple);
 }
 
 input {
     background-color: var(--dark-grey)!important;
     color: whitesmoke!important;
-    border-color: var(--medium-pink) !important;
+    border-color: var(--medium-blue) !important;
 }
 
 .navbar {
@@ -64,7 +65,7 @@ input {
 
 .card {
     align-items: center;
-    border-color: var(--medium-pink) !important;
+    border-color: var(--medium-blue) !important;
     display: flex;
 }
 
@@ -83,21 +84,21 @@ input {
 #login-btn {
     padding: 20px 50px;
     background-color: var(--dark-grey) !important;
-    border-color: var(--light-blue)!important;
-    color: var(--light-blue)!important;
+    border-color: var(--light-purple)!important;
+    color: var(--light-purple)!important;
 }
 
 #ticker-search {
     background-color: var(--dark-grey) !important;
-    border-color: var(--light-blue)!important;
-    color: var(--light-blue)!important;
+    border-color: var(--light-purple)!important;
+    color: var(--light-purple)!important;
 }
 
 #menu-btn,
 #predict-btn {
     background-color: var(--dark-grey) !important;
-    border-color: var(--medium-pink)!important;
-    color: var(--medium-pink)!important;
+    border-color: var(--medium-blue)!important;
+    color: var(--medium-blue)!important;
 }
 
 #nav-home-btn,
@@ -107,8 +108,8 @@ input {
 #nav-login-btn,
 #nav-signup-btn {
     background-color: var(--dark-grey) !important;
-    border-color: var(--light-blue)!important;
-    color: var(--light-blue)!important;
+    border-color: var(--light-purple)!important;
+    color: var(--light-purple)!important;
     cursor: pointer;
 }
 
@@ -128,15 +129,15 @@ input {
 
 .card-body {
     background-color: var(--dark-grey) !important;
-    border-color: var(--medium-pink) !important;
+    border-color: var(--medium-blue) !important;
 }
 
-#current-price {
-    color: var(--medium-pink) !important;
+#start-price {
+    color: var(--medium-blue) !important;
 }
 
 #predict-card {
-    color: var(--light-blue) !important;
+    color: var(--light-purple) !important;
 }
 
 input:-webkit-autofill,
