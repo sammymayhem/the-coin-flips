@@ -54,19 +54,16 @@
 {{!-- Card shows after the search has been made --}}
 {{#if active}}
 <div class="container" id="predict-card">
+
+    <h4 class="lead">Click in the open space to log a prediction!</h4>
+
     <div class="row">
         <div class="card" style="width: 70vw">
-            <div class="card-body" style="width: 100%">
+            <div class="card-body" id="card-body" style="width: 100%">
                 <h5 class="card-title" id="ticker-symbol">{{ticker}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted" id="current-price"></h6>
                 <canvas id="chart" width="90%"></canvas>
                 <div id="prediction-preview"></div>
-                {{!-- <p class="card-text" id="ticker-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptates ea earum omnis, iste quod blanditiis suscipit, ducimus consectetur, eveniet sequi odio.
-                    Neque corrupti praesentium aspernatur, asperiores voluptas rerum quasi assumenda, soluta architecto
-                    est cum illo! Esse optio dolore eius asperiores expedita cupiditate assumenda accusamus doloribus
-                    quia, omnis beatae illum voluptatibus!</p> --}}
-                <button type="button" class="btn btn-primary" id="predict-btn">Predict</button>
             </div>
         </div>
     </div>
@@ -117,7 +114,5 @@
 </footer>
 
 {{#if active}}
-<script src="./js/chart.js"></script>
+<script src="./js/predict.js"></script>
 {{/if}}
-{{!--
-<script src="./js/predict.js"></script> --}}
