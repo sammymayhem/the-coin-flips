@@ -2,6 +2,10 @@ const ctx = document.getElementById("chart").getContext("2d");
 
 const ticker = document.getElementById("ticker-symbol").textContent;
 
+const validateClick = (x) => {
+  return x > moment().format("x");
+};
+
 const getChart = async () => {
   try {
     const response = await fetch("/chart", {
@@ -24,11 +28,30 @@ const getChart = async () => {
         ],
       },
       options: {
-        //   onClick: (e) => {
-        //     const canvasPosition = Chart.helpers.getRelativePosition(e, chart);
-        //     const dataX = chart.scales.x.getValueForPixel(canvasPosition.x);
-        //     const dataY = chart.scales.y.getValueForPixel(canvasPosition.y);
-        //   },
+        scales: {
+          x: {
+            type: "time",
+            time: {
+              displayFormats: {
+                day: "MMM D",
+              },
+            },
+          },
+        },
+        onClick: (e) => {
+          const canvasPosition = Chart.helpers.getRelativePosition(e, chart);
+          const clickX = Math.round(
+            chart.scales.x.getValueForPixel(canvasPosition.x)
+          );
+          const clickY = chart.scales.y.getValueForPixel(canvasPosition.y);
+
+          const validClick = validateClick(clickX);
+
+          if (validClick) {
+            console.log(clickX);
+            console.log(clickY);
+          }
+        },
       },
     });
   } catch (err) {

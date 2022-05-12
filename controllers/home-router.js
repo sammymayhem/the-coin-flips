@@ -47,7 +47,7 @@ router.get("/predictions", async (req, res) => {
       res.render("predictions", {
         title: "Prediction",
         active: true,
-        ticker: req.query.tickerText,
+        ticker: req.query.tickerText.toUpperCase(),
       });
     } else {
       res.render("predictions", { title: "Prediction", active: false });
@@ -67,6 +67,12 @@ router.post("/chart", async (req, res) => {
   const response = await fetch(pgUrl);
   const rawdata = await response.json();
 
+  // NEED TO ADD MORE TO SEND INFO TO CLIENT
+  if (!rawdata.results) {
+    res.status(400).send("⛔ Invalid Ticker.");
+    return;
+  }
+
   let x = [];
   let y = [];
 
@@ -78,7 +84,7 @@ router.post("/chart", async (req, res) => {
   const last = x[x.length - 1];
   const xLength = x.length;
   for (let i = 1; i < xLength; i++) {
-    x.push(last + i * 86400);
+    x.push(last + i * 86400000);
   }
 
   const data = {
