@@ -44,43 +44,50 @@ router.get("/signup", (req, res) => {
 router.get("/predictions", async (req, res) => {
   try {
     if ("tickerText" in req.query) {
-      const ticker = req.query.tickerText;
-      const tMonthAgo = moment().subtract(1, "months").format("YYYY-MM-DD");
-      const tCurrent = moment().format("YYYY-MM-DD");
-      const pgUrl = `https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/${tMonthAgo}/${tCurrent}?adjusted=true&sort=asc&apiKey=${process.env.PG_KEY}`;
-
-      const response = await fetch(pgUrl);
-      const rawdata = await response.json();
-
-      let x = [];
-      let y = [];
-
-      rawdata.results.forEach((obj) => {
-        y.push(obj.c);
-        x.push(obj.t);
+      res.render("predictions", {
+        title: "Prediction",
+        active: true,
+        ticker: req.query.tickerText,
       });
-
-      const last = x[x.length - 1];
-      const xLength = x.length;
-      for (let i = 1; i < xLength; i++) {
-        x.push(last + i * 86400);
-      }
-
-      const data = {
-        ticker,
-        x,
-        y,
-      };
-
-      console.log(data);
-
-      res.render("predictions", { title: "Prediction", data });
     } else {
-      res.render("predictions", { title: "Prediction" });
+      res.render("predictions", { title: "Prediction", active: false });
     }
   } catch (err) {
     console.log(err);
   }
+});
+
+router.post("/chart", async (req, res) => {
+  console.log("asdlkfjasdf");
+  const ticker = req.body.ticker;
+  const tMonthAgo = moment().subtract(1, "months").format("YYYY-MM-DD");
+  const tCurrent = moment().format("YYYY-MM-DD");
+  const pgUrl = `https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/${tMonthAgo}/${tCurrent}?adjusted=true&sort=asc&apiKey=${process.env.PG_KEY}`;
+
+  const response = await fetch(pgUrl);
+  const rawdata = await response.json();
+
+  let x = [];
+  let y = [];
+
+  rawdata.results.forEach((obj) => {
+    y.push(obj.c);
+    x.push(obj.t);
+  });
+
+  const last = x[x.length - 1];
+  const xLength = x.length;
+  for (let i = 1; i < xLength; i++) {
+    x.push(last + i * 86400);
+  }
+
+  const data = {
+    ticker,
+    x,
+    y,
+  };
+
+  res.json(data);
 });
 
 module.exports = router;
