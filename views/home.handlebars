@@ -1,7 +1,7 @@
 <section>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4" id="home-btn">Augur</h1>
+      <h1 class="display-4"><a href="/" id="home-btn">Augur</a></h1>
       <p class="lead">The choice is yours.</p>
     </div>
     <div class="top-btn">
@@ -24,16 +24,16 @@
 <section class="top-menu">
   <div class="collapse" id="collapseExample">
     <div class="card card-body" id="nav-home-btn">
-      <a>Home</a>
+      <a href="/">Home</a>
     </div>
     <div class="card card-body" id="nav-predict-btn">
-      <a>Predict</a>
+      <a href="/predictions">Predict</a>
     </div>
     <div class="card card-body" id="nav-portfolio-btn">
-      <a>Portfolio</a>
+      <a href="/portfolio">Portfolio</a>
     </div>
     <div class="card card-body" id="nav-logout-btn">
-      <a>Logout</a>
+      <a href="/api/users/logout">Logout</a>
     </div>
   </div>
 </section>
@@ -41,13 +41,11 @@
 <section class="top-menu">
   <div class="collapse" id="collapseExample">
     <div class="card card-body" id="nav-login-btn">
-      <a>Login</a>
+      <a href="/login">Login</a>
     </div>
     <div class="card card-body" id="nav-signup-btn">
-      <a>Sign Up</a>
+      <a href="/signup">Sign Up</a>
     </div>
   </div>
 </section>
 {{/if}}
-
-<script src="./js/home.js"></script>

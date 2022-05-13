@@ -33,7 +33,7 @@ router.get("/signup", (req, res) => {
   res.render("signup", { title: "Sign-Up Page" });
 });
 
-router.get("/predictions", async (req, res) => {
+router.get("/predictions", withAuth, async (req, res) => {
   try {
     if ("tickerText" in req.query) {
       res.render("predictions", {

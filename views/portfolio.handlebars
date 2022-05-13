@@ -1,7 +1,7 @@
 <section>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4" id="home-btn">Augur</h1>
+            <h1 class="display-4"><a href="/" id="home-btn">Augur</a></h1>
             <p class="lead">The choice is yours.</p>
         </div>
         <div class="top-btn">
@@ -32,7 +32,7 @@
             <a href="/portfolio">Portfolio</a>
         </div>
         <div class="card card-body" id="nav-logout-btn">
-            <a>Logout</a>
+            <a href="/api/users/logout">Logout</a>
         </div>
     </div>
 </section>
@@ -59,10 +59,5 @@
 {{else}}
 <h2 id="open-pred-title">You need to make a prediction! Get goin!</h2>
 
-<button class="btn btn-outline-secondary" type="submit" cursor="pointer" id="predict-btn">Make a Prediction</button>
+<button class="btn btn-outline-secondary predict-btn" type="submit" cursor="pointer"><a class="predict-btn" href="/predictions">Make a Prediction</a></button>
 {{/if}}
-
-
-
-<script src="./js/portfolio.js"></script>
-<script src="./js/logout.js"></script>

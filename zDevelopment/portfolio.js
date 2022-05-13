@@ -1,87 +1,30 @@
-const ctx1 = document.getElementById("chart1").getContext("2d");
-const ctx2 = document.getElementById("chart2").getContext("2d");
-const ctx3 = document.getElementById("chart3").getContext("2d");
+const handlePredictionHistory = async (event) => {
+    event.preventDefault();
+    try {
+        const history = {
+            selectedTicker: req.body.ticker,
+            selectedPrice: req.body.start_price,
+            selectedTime: req.body.start_time,
+            predictedTime: req.body.predicted_time,
+            predictedPrice: req.body.predicted_price
+        }
+        const historyResponse = await fetch("/api/prediction", {
+            method: "GET",
+            body: history,
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        });
+        if (!historyResponse.ok) {
+            alert ("Failed to load prediction history.  Please try again");
+        }
+        window.location.replace("/portfolio");
+    } catch (err) {
+        console.log(err);
+    }
 
-const chart1 = new Chart(ctx1, {
-  type: "line",
-  data: {
-    datasets: [
-      {
-        data: [
-          { x: "2022-05-05", y: 20 },
-          { x: "2022-05-06", y: 10 },
-          { x: "2022-05-07", y: 25 },
-          { x: "2022-05-08", y: 15 },
-          { x: "2022-05-09", y: 20 },
-        ],
-      },
-    ],
-  },
-  options: {
-    onClick: (e) => {
-      const canvasPosition = Chart.helpers.getRelativePosition(e, chart1);
+    //want to grab data from the GET
+    // display the most recent three requests on the page
+}
 
-      const dataX = chart1.scales.x.getValueForPixel(canvasPosition.x);
-      const dataY = chart1.scales.y.getValueForPixel(canvasPosition.y);
-
-      console.log(dataX);
-      console.log(dataY);
-    },
-  },
-});
-
-const chart2 = new Chart(ctx2, {
-  type: "line",
-  data: {
-    datasets: [
-      {
-        data: [
-          { x: "2022-05-05", y: 20 },
-          { x: "2022-05-06", y: 10 },
-          { x: "2022-05-07", y: 25 },
-          { x: "2022-05-08", y: 15 },
-          { x: "2022-05-09", y: 20 },
-        ],
-      },
-    ],
-  },
-  options: {
-    onClick: (e) => {
-      const canvasPosition = Chart.helpers.getRelativePosition(e, chart2);
-
-      const dataX = chart2.scales.x.getValueForPixel(canvasPosition.x);
-      const dataY = chart2.scales.y.getValueForPixel(canvasPosition.y);
-
-      console.log(dataX);
-      console.log(dataY);
-    },
-  },
-});
-
-const chart3 = new Chart(ctx3, {
-  type: "line",
-  data: {
-    datasets: [
-      {
-        data: [
-          { x: "2022-05-05", y: 20 },
-          { x: "2022-05-06", y: 10 },
-          { x: "2022-05-07", y: 25 },
-          { x: "2022-05-08", y: 15 },
-          { x: "2022-05-09", y: 20 },
-        ],
-      },
-    ],
-  },
-  options: {
-    onClick: (e) => {
-      const canvasPosition = Chart.helpers.getRelativePosition(e, chart3);
-
-      const dataX = chart3.scales.x.getValueForPixel(canvasPosition.x);
-      const dataY = chart3.scales.y.getValueForPixel(canvasPosition.y);
-
-      console.log(dataX);
-      console.log(dataY);
-    },
-  },
-});
+document.addEventListener("onload", handlePredictionHistory);
