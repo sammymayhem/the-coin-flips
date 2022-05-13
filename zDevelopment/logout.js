@@ -26,5 +26,3 @@ document.querySelector("#home-btn").addEventListener("click", homeHandler);
 document
   .querySelector("#nav-logout-btn")
   .addEventListener("click", logoutHandler);
-
-document.querySelector("#nav-home-btn").addEventListener("click", homeHandler);

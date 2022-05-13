@@ -1,7 +1,3 @@
-const homeHandler = () => {
-  location.replace("/");
-};
-
 // Validate user input and send login request
 const signupHandler = async (event) => {
   event.preventDefault();
@@ -45,12 +41,4 @@ const signupHandler = async (event) => {
   }
 };
 
-// const loginHandler = () => {
-//   document.location.replace("/login");
-// };
-
-document.querySelector("#home-btn").addEventListener("click", homeHandler);
-
 document.querySelector("#signup-btn").addEventListener("click", signupHandler);
-
-//document.querySelector("#login-btn").addEventListener("click", loginHandler);

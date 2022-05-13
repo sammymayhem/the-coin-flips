@@ -44,14 +44,17 @@ router.get("/login", (req, res) => {
   }
 });
 
-router.post("/logout", withAuth, (req, res) => {
+router.get("/logout", withAuth, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       console.error(err);
       res.status(500).json({ message: "Internal server error" });
       return;
     }
-    res.end();
+    res.render("home", {
+      title: "Home Page",
+      isLoggedIn: false,
+    });
   });
 });
 
