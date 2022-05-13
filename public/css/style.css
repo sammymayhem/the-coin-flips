@@ -16,14 +16,32 @@ body {
     text-align: center;
 }
 
-a {
+a, a:hover {
     text-decoration: none !important;
-    color: var(--light-blue);
+    color: var(--light-blue) !important;
 }
 
 .jumbotron {
     text-align: center;
     background-color: var(--dark-grey);
+    margin-bottom: 0 !important;
+    padding: 4rem 2rem 0 2rem !important;
+}
+
+.about {
+    background: linear-gradient(var(--dark-grey), var(--dark-pink) 50%, var(--dark-grey));
+    text-align: center;
+    padding-bottom: 4rem !important;
+}
+
+#about-title {
+    color: var(--medium-blue) !important;
+    padding: 40px 0 15px 0;
+}
+
+#about-text {
+    color: var(--light-blue);
+    padding: 15px 0 40px 0;
 }
 
 h1 {
