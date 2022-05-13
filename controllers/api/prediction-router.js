@@ -1,7 +1,8 @@
 const { Prediction } = require("../../models");
 const router = require("express").Router();
+const withAuth = require("../../util/withAuth");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     console.log(req.params);
     const predictionData = await Prediction.findAll();
@@ -11,7 +12,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     console.log(req.body);
     console.log(req.session.userId);
@@ -31,13 +32,5 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-// router.post("/ticker", async (req, res) => {
-//   const ticker = req.body.tickerText;
-//   console.log("ayooooooo");
-//   console.log(ticker);
-//   res.json("okay");
-//   // api call
-// });
 
 module.exports = router;

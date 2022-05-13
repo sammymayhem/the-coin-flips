@@ -1,5 +1,6 @@
 const { User } = require("../../models");
 const router = require("express").Router();
+const withAuth = require("../../util/withAuth");
 
 router.post("/", async (req, res) => {
   try {
@@ -43,7 +44,7 @@ router.get("/login", (req, res) => {
   }
 });
 
-router.post("/logout", (req, res) => {
+router.post("/logout", withAuth, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       console.error(err);

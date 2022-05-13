@@ -6,6 +6,10 @@ const predictHandler = () => {
   location.replace("/predictions");
 };
 
+const portfolioHandler = () => {
+  location.replace("/portfolio");
+};
+
 const loginHandler = () => {
   location.replace("/login");
 };
@@ -38,11 +42,17 @@ const attachHandlers = (isLoggedIn) => {
 
   if (isLoggedIn) {
     document
-      .querySelector("#nav-logout-btn")
-      .addEventListener("click", logoutHandler);
+      .querySelector("#nav-home-btn")
+      .addEventListener("click", homeHandler);
     document
       .querySelector("#nav-predict-btn")
       .addEventListener("click", predictHandler);
+    document
+      .querySelector("#nav-portfolio-btn")
+      .addEventListener("click", portfolioHandler);
+    document
+      .querySelector("#nav-logout-btn")
+      .addEventListener("click", logoutHandler);
   } else {
     document
       .querySelector("#nav-login-btn")

@@ -3,9 +3,6 @@ const currentPrice = document.getElementById("current-price");
 const ticker = document.getElementById("ticker-symbol").textContent;
 const predictionPreview = document.getElementById("prediction-preview");
 
-// let clickX;
-// let clickY;
-
 const validateClick = (x) => {
   return x > moment().format("x");
 };
@@ -111,10 +108,6 @@ const getChart = async () => {
   } catch (err) {
     console.log(err);
   }
-};
-
-const sendPrediction = async () => {
-
 };
 
 getChart();

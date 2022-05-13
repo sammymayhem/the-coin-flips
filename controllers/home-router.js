@@ -5,14 +5,6 @@ const moment = require("moment");
 const fetch = require("node-fetch");
 require("dotenv").config();
 
-// use withAuth middleware to redirect from protected routes.
-// const withAuth = require("../util/withAuth");
-
-// example of a protected route
-// router.get("/users-only", withAuth, (req, res) => {
-//   // ...
-// });
-
 router.get("/", async (req, res) => {
   try {
     let user;
@@ -57,7 +49,7 @@ router.get("/predictions", async (req, res) => {
   }
 });
 
-router.post("/chart", async (req, res) => {
+router.post("/chart", withAuth, async (req, res) => {
   console.log("asdlkfjasdf");
   const ticker = req.body.ticker;
   const tMonthAgo = moment().subtract(1, "months").format("YYYY-MM-DD");
@@ -96,7 +88,7 @@ router.post("/chart", async (req, res) => {
   res.json(data);
 });
 
-router.get("/portfolio", async (req, res) => {
+router.get("/portfolio", withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const predictionData = await Prediction.findAll({

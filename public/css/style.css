@@ -16,13 +16,18 @@ body {
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+    color: var(--light-blue);
+}
+
 .jumbotron {
     text-align: center;
     background-color: var(--dark-grey);
 }
 
 h1 {
-    color: var(--medium-pink);
+    color: var(--medium-pink)!important;
 }
 
 .lead{
