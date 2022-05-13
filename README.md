@@ -17,14 +17,16 @@ Chart.JS is used to display the stock data to the user.
 
 ## Screenshots
 ### Home Page
+![Screenshot of home page](augurHomeScreenshot.png)
 
 ### Prediction Page
+![Screenshot of prediction page](augurPredictScreenshot.png)
 
 ### Portfolio Page
-
+![Screenshot of portfolio page](augurPortfolioScreenshot.png)
 
 ## Deployed Heroku Application
-
+https://augur-app.herokuapp.com/ 
 
 ## Link to Repository
 https://github.com/sammymayhem/the-coin-flips 
