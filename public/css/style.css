@@ -123,7 +123,8 @@ input {
 
 #menu-btn,
 .predict-btn,
-#predict-btn {
+#predict-btn,
+#signup-btn {
     background-color: var(--dark-grey) !important;
     border-color: var(--medium-pink)!important;
     color: var(--medium-pink)!important;
