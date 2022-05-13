@@ -1,6 +1,7 @@
 const session = require("express-session");
 const sequelize = require("./connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+require("dotenv").config();
 
 // Check for SECRET env var and throw an error if it isn't set.
 if (!process.env.SECRET) {
@@ -14,7 +15,7 @@ const sess = {
   secret: process.env.SECRET,
   cookie: {
     // cookies expire after 1 day (time in milliseconds)
-    maxAge: 8.64e7
+    maxAge: 8.64e7,
   },
   resave: false,
   // Wait to save session until the user logs in
