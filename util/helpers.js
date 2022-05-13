@@ -18,6 +18,6 @@ module.exports = {
     ];
     const month = months[datetime.getMonth()];
     const date = datetime.getDate();
-    return `$${price} @ ${month} ${date}`;
+    return `$${price} on ${month} ${date}`;
   },
 };
