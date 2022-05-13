@@ -102,7 +102,7 @@ const getChart = async () => {
                 } catch (err) {
                   console.log(err);
                 }
-                location.replace("/predictions");
+                location.replace("/portfolio");
               });
           }
         },
@@ -113,6 +113,8 @@ const getChart = async () => {
   }
 };
 
-const sendPrediction = async () => {};
+const sendPrediction = async () => {
+
+};
 
 getChart();

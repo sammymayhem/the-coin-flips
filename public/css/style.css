@@ -64,6 +64,7 @@ input {
 
 .card {
     align-items: center;
+    background-color: var(--dark-grey) !important;
     border-color: var(--medium-pink) !important;
     display: flex;
 }
@@ -158,4 +159,8 @@ select:-webkit-autofill:focus {
 #prediction-header {
     text-decoration: underline;
     padding: 10px 0;
+}
+
+#open-pred-title {
+    color: var(--light-blue);
 }
