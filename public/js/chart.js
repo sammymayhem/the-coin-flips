@@ -76,7 +76,7 @@ const getChart = async () => {
           if (validClick) {
             predictionPreview.innerHTML = `
             <h5 id="prediction-header">Prediction</h5>
-            <h6>${ticker}:  $${clickY} @ ${predDate}</h6>
+            <h6>${ticker}:  $${clickY} on ${predDate}</h6>
             <button type="button" class="btn btn-primary" id="predict-btn">Predict</button>`;
             document
               .getElementById("predict-btn")
