@@ -1,5 +1,8 @@
 module.exports = {
-  // add helper functions for handlebars here
-  // Example:
-  // json: object => JSON.stringify(object, null, 4),
+  myForLoop:(from, to, incr, block) => {
+    let accum = '';
+    for(let i = from; i < to; i += incr)
+        accum += block.fn(i);
+    return accum;
+}
 };

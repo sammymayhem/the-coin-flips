@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Prediction } = require("../models");
 const withAuth = require("../util/withAuth");
 const moment = require("moment");
 const fetch = require("node-fetch");
@@ -94,6 +94,30 @@ router.post("/chart", async (req, res) => {
   };
 
   res.json(data);
+});
+
+router.get("/portfolio", async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const predictionData = await Prediction.findAll({
+      where: {
+        user_id: req.session.userId
+      },
+    });
+    let predLength = predictionData.length;
+
+    if (predLength > 3) {
+      predLength = 3;
+    };
+    console.log(predictionData.length + "yooo");
+    if (predictionData.length === 0) {
+      res.render("portfolio", { title: "Portfolio Page", hasPortfolio: false });
+      return;
+    }
+    res.render("portfolio", { title: "Portfolio Page", hasPortfolio: true, predLength: predLength });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

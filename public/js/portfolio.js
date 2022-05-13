@@ -1,5 +1,3 @@
-const req = require("express/lib/request");
-
 const handlePredictionHistory = async (event) => {
     event.preventDefault();
     try {
