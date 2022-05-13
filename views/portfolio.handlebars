@@ -45,32 +45,15 @@
 
 <div class="container">
     <div class="row">
-        {{#myForLoop 0 predLength 1}}
-        <div class="card col-md-3 m-2">
-            <div class="card-body" id="card-body" style="width: 100%">
-                <h5 class="card-title" id="ticker-symbol">{{ticker}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted" id="current-price"></h6>
-                <canvas id="chart" width="90%"></canvas>
-                <div id="prediction-preview"></div>
+        {{#each predictions}}
+        <div class="card col-xl-4 m-2">
+            <div class="card-body px-0" id="card-body" style="width: 100%">
+                <h5 class="card-title" id="prediction-symbol">{{this.ticker}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted port-info"><span class="pred-label">Start Price/Date:&nbsp;&nbsp;&nbsp;</span>{{format_date this.start_price this.start_time}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted port-info"><span class="pred-label">Predicted Price/Date:&nbsp;&nbsp;&nbsp;</span>{{format_date this.predicted_price this.predicted_time}}</h6>
             </div>
         </div>
-        {{!-- <div class="card col-md-3 m-2">
-            <div class="card-body" id="card-body" style="width: 100%">
-                <h5 class="card-title" id="ticker-symbol">{{ticker}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted" id="current-price"></h6>
-                <canvas id="chart" width="90%"></canvas>
-                <div id="prediction-preview"></div>
-            </div>
-        </div>
-        <div class="card col-md-3 m-2">
-            <div class="card-body" id="card-body" style="width: 100%">
-                <h5 class="card-title" id="ticker-symbol">{{ticker}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted" id="current-price"></h6>
-                <canvas id="chart" width="90%"></canvas>
-                <div id="prediction-preview"></div>
-            </div>
-        </div> --}}
-        {{/myForLoop}}
+        {{/each}}
     </div>
 </div>
 {{else}}
