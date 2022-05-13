@@ -101,20 +101,30 @@ router.get("/portfolio", async (req, res) => {
     // Get all projects and JOIN with user data
     const predictionData = await Prediction.findAll({
       where: {
-        user_id: req.session.userId
+        user_id: req.session.userId,
       },
+      order: [["start_time", "DESC"]],
     });
-    let predLength = predictionData.length;
 
-    if (predLength > 3) {
-      predLength = 3;
-    };
-    console.log(predictionData.length + "yooo");
+    let predictions = predictionData.map((prediction) =>
+      prediction.get({ plain: true })
+    );
+
+    const predLength = predictions.length;
+
+    if (predLength > 10) {
+      predictions = predictions.slice(0, 10);
+    }
+
     if (predictionData.length === 0) {
       res.render("portfolio", { title: "Portfolio Page", hasPortfolio: false });
       return;
     }
-    res.render("portfolio", { title: "Portfolio Page", hasPortfolio: true, predLength: predLength });
+    res.render("portfolio", {
+      title: "Portfolio Page",
+      hasPortfolio: true,
+      predictions,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

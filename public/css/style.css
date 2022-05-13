@@ -2,7 +2,7 @@
     --purple: #300350;
     --dark-pink: #94167F;
     --medium-pink: #E93479;
-    --pink: #F62E97;
+    --pink: #ee65ac;
     --blue: #153CB4;
     --medium-blue: #00b8ff;
     --light-blue: #00fff9;
@@ -136,6 +136,14 @@ input {
     color: var(--medium-pink) !important;
 }
 
+.port-info {
+    color: var(--pink) !important;
+}
+
+.pred-label{
+    color: var(--light-blue) !important;
+}
+
 #predict-card {
     color: var(--light-blue) !important;
 }
@@ -163,4 +171,8 @@ select:-webkit-autofill:focus {
 
 #open-pred-title {
     color: var(--light-blue);
+}
+
+#prediction-symbol{
+    color: var(--medium-blue);
 }
