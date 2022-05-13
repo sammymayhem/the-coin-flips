@@ -36,13 +36,13 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
-  if (req.session.isLoggedIn) {
-    res.json(true);
-  } else {
-    res.json(false);
-  }
-});
+// router.get("/login", (req, res) => {
+//   if (req.session.isLoggedIn) {
+//     res.json(true);
+//   } else {
+//     res.json(false);
+//   }
+// });
 
 router.get("/logout", withAuth, (req, res) => {
   req.session.destroy((err) => {
