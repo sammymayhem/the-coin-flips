@@ -2,7 +2,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4"><a href="/" id="home-btn">Augur</a></h1>
-            <p class="lead">The choice is yours.</p>
+            <p class="lead">The choices you've made.</p>
         </div>
         <div class="top-btn">
             <button class="btn btn-primary" id="menu-btn" type="button" data-toggle="collapse"
@@ -49,8 +49,11 @@
         <div class="card col-xl-4 m-2">
             <div class="card-body px-0" id="card-body" style="width: 100%">
                 <h5 class="card-title" id="prediction-symbol">{{this.ticker}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted port-info"><span class="pred-label">Start Price/Date:&nbsp;&nbsp;&nbsp;</span>{{format_date this.start_price this.start_time}}</h6>
-                <h6 class="card-subtitle mb-2 text-muted port-info"><span class="pred-label">Predicted Price/Date:&nbsp;&nbsp;&nbsp;</span>{{format_date this.predicted_price this.predicted_time}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted port-info"><span class="pred-label">Start
+                        Price/Date:&nbsp;&nbsp;&nbsp;</span>{{format_date this.start_price this.start_time}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted port-info"><span class="pred-label">Predicted
+                        Price/Date:&nbsp;&nbsp;&nbsp;</span>{{format_date this.predicted_price this.predicted_time}}
+                </h6>
             </div>
         </div>
         {{/each}}
@@ -59,4 +62,5 @@
 {{else}}
 <h2 id="open-pred-title">You need to make a prediction! Get goin!</h2>
 {{/if}}
-<button class="btn btn-outline-secondary predict-btn" type="submit" cursor="pointer"><a class="predict-btn" href="/predictions">Make a Prediction</a></button>
+<button class="btn btn-outline-secondary predict-btn" type="submit" cursor="pointer"><a class="predict-btn"
+        href="/predictions">Make a Prediction</a></button>
